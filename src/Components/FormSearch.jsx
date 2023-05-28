@@ -1,10 +1,4 @@
-export const Form = ({
-  handleChange,
-  handleSubmit,
-  handleSort,
-  query,
-  error,
-}) => {
+export const FormSearch = ({ handleChange, handleSubmit, query, error }) => {
   return (
     <>
       <form className="form" onSubmit={handleSubmit}>
@@ -14,8 +8,8 @@ export const Form = ({
           onChange={handleChange}
           value={query}
           style={{
-            border: "1px solid transparent",
-            borderColor: error ? "red" : "transparent",
+            border: '1px solid transparent',
+            borderColor: error ? 'red' : 'transparent',
           }}
         />
         <button
@@ -26,8 +20,7 @@ export const Form = ({
           Search
         </button>
       </form>
-      <input type="checkbox" onChange={handleSort} /> Sort movies by title
-      <input type="checkbox" onChange={handleSort} /> Sort movies by year
+      <br />
     </>
   );
 };
