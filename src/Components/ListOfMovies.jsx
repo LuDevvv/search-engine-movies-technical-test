@@ -4,10 +4,12 @@ export const ListOfMovies = ({ movies }) => {
       {movies.map(({ id, title, poster, year, type }) => {
         return (
           <li key={id} className="movie">
-            <h3 className="movie-title">{title}</h3>
             <img src={poster} alt={title} className="movie-image" />
-            <p className="movie-year">Year: {year}</p>
-            <p className="movie-type">Type: {type}</p>
+            <div className="shadow-info">
+              <h3 className="movie-title">{title}</h3>
+              <p className="movie-year">Year: {year}</p>
+              <p className="movie-type">Type: {type}</p>
+            </div>
           </li>
         );
       })}

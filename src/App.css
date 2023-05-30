@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .app {
   width: 100%;
   display: flex;
@@ -6,12 +11,17 @@
   gap: 20px;
 }
 
+.header-app {
+  display: grid;
+  width: 70%;
+}
+
 .form {
   display: flex;
 }
 
 .form-input {
-  width: 500px;
+  width: 100%;
 }
 
 .app-title {
@@ -19,30 +29,57 @@
 }
 
 .movies-results {
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 1100px;
 }
 
 .movies {
   display: grid;
-  width: 100%;
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+  padding-right: 40px;
+  width: 70%;
+  gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
   list-style: none;
 }
 
+.movie {
+  position: relative;
+}
+
+.movie .shadow-info {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.427);
+  font-size: 10px;
+}
+
 .movie img {
   width: 250px;
+  height: 350px;
+  object-fit: cover;
   border-radius: 5px;
 }
 
 .filters {
-  display: flex;
+  display: grid;
   gap: 20px;
   font-weight: 500;
+}
+
+.options-filter {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.checkboxes-filter {
+  display: flex;
+  gap: 20px;
 }
 
 .no-movies-msg {

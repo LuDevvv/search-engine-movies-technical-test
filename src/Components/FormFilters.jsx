@@ -1,23 +1,43 @@
-export const FormFilters = ({ handleSort }) => {
+export const FormFilters = ({
+  handleSortByTitle,
+  handleSortByYear,
+  handleSortByOptions,
+}) => {
   return (
     <form className="filters">
-      <div>
-        <input type="checkbox" name="sort-by-title" onChange={handleSort} />
-        <label htmlFor="sort-by-title">Sort movies by title 🔤</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sort-by-year" onChange={handleSort} />
-        <label htmlFor="sort-by-year">Sort movies by year 📅</label>
-      </div>
+      <section className="checkboxes-filter">
+        <div>
+          <label htmlFor="sort-by-title">
+            <input
+              type="checkbox"
+              name="sort-by-title"
+              onChange={handleSortByTitle}
+            />
+            Sort movies by title 🔤
+          </label>
+        </div>
 
-      <div>
-        <select id="cars">
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="opel">Opel</option>
-          <option value="audi">Audi</option>
+        <div>
+          <label htmlFor="sort-by-year">
+            <input
+              type="checkbox"
+              name="sort-by-year"
+              onChange={handleSortByYear}
+            />
+            Sort movies by year 📅
+          </label>
+        </div>
+      </section>
+
+      <section className="options-filter">
+        Sort movies by type 🎬:
+        <select onChange={handleSortByOptions}>
+          <option value="">Seleccione 🔽</option>
+          <option value="series">Series 🎬</option>
+          <option value="movie">Movie 🍿</option>
+          <option value="game">Game 🕹️</option>
         </select>
-      </div>
+      </section>
     </form>
   );
 };

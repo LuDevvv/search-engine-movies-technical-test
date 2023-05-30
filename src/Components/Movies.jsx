@@ -1,5 +1,5 @@
-import { ListOfMovies } from "./ListOfMovies";
-import { NoMoviesResults } from "./NoResults";
+import { ListOfMovies } from './ListOfMovies';
+import { NoMoviesResults } from './NoResults';
 
 export const Movies = ({ movies }) => {
   const hasMovies = movies?.length >= 0;

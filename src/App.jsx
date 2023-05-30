@@ -1,15 +1,22 @@
-import { useState } from 'react';
 import { useMovies } from './hooks/useMovies';
 import { useSearch } from './hooks/useSearch';
+import { useFilters } from './hooks/useFilters';
 import { FormSearch } from './Components/FormSearch';
 import { FormFilters } from './Components/FormFilters';
 import { Movies } from './Components/Movies';
 import './App.css';
 
 function App() {
-  const [sort, setSort] = useState(false);
   const { query, error, setQuery } = useSearch();
-  const { movies, getMovies, loading } = useMovies({ query, sort });
+  const { movies, getMovies, loading } = useMovies({ query });
+  const {
+    sortedMovies,
+    handleSortByTitle,
+    handleSortByYear,
+    handleSortByOptions,
+  } = useFilters({
+    movies,
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,24 +28,25 @@ function App() {
     setQuery(query);
   };
 
-  const handleSort = () => {
-    setSort(!sort);
-  };
-
   return (
     <div className="app">
-      <header>
-        <h1 className="app-title">Search Movies App 🍿</h1>
+      <header className="header-app">
+        <h1 className="app-title">Search Movie App 🍿</h1>
+        <br />
         <FormSearch
           query={query}
           error={error}
           handleSubmit={handleSubmit}
           handleChange={handleChange}
         />
-        <FormFilters handleSort={handleSort} />
+        <FormFilters
+          handleSortByTitle={handleSortByTitle}
+          handleSortByYear={handleSortByYear}
+          handleSortByOptions={handleSortByOptions}
+        />
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </header>
-      {loading ? <p>Loading...</p> : <Movies movies={movies} />}
+      {loading ? <p>Loading...</p> : <Movies movies={sortedMovies} />}
     </div>
   );
 }
