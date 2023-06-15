@@ -1,20 +1,19 @@
-# Enunciado
+# Statement
 
-🎬 Crea una aplicación para buscar películas 
-⚙️ API a usar: - https://www.omdbapi.com/ 
-📢 Consigue la API Key en la propia página web registrando tu email.
+🎬 Create an application to search for movies.
+⚙️ API to use: - [https://www.omdbapi.com/](https://www.omdbapi.com/)
+📢 Get the API Key on the website by registering your email.
 
-## Requerimientos:
+## Requirements:
 
-Necesita mostrar un input para buscar la película y un botón para buscar.
-Lista las películas y muestra el título, año y poster.
-Que el formulario funcione
-Haz que las películas se muestren en un grid responsive.
-Hacer el fetching de datos a la API
+- Display an input field to search for the movie and a button to search.
+- List the movies and display the title, year, and poster.
+- Ensure that the form is functional.
+- Implement a responsive grid to display the movies.
+- Fetch data from the API.
 
-## Primera iteración:
+## First iteration:
 
-Evitar que se haga la misma búsqueda dos veces seguidas.
-Haz que la búsqueda se haga automáticamente al escribir.
-Evita que se haga la búsqueda continuamente al escribir (debounce)
-
+- Prevent duplicate consecutive searches.
+- Implement automatic search while typing.
+- Avoid continuous searching while typing (debounce).
